@@ -12,6 +12,18 @@ def encoder(password):
             new_password += str(int(i) + 3)
     return new_password
 
+def decode(password):
+    new_password = ''
+    for i in password:
+        if i == '0':
+            new_password += '7'
+        elif i == '1':
+            new_password += '8'
+        elif i == '2':
+            new_password += '9'
+        else:
+            new_password += str(int(i) - 3)
+    print(f"The encoded password is {password}, and the original password is {new_password}\n")
 
 def main():
 
@@ -30,7 +42,7 @@ def main():
             print("Your password has been encoded and stored!\n")
 
         elif user_choice == '2':
-            print(f"The encoded password is {new_password}, and the original password is {password}\n")
+            decode(new_password)
 
         elif user_choice == '3':
             break
